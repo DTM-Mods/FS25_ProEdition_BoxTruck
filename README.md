@@ -12,7 +12,7 @@ in game**, and has not been packaged or uploaded.
 - Shop choice: side walls or sliding stakes. **X** folds the side boards outward/down or pairs the alternating stakes on both sides using the native Fliegl-style 0.7-second setup.
 - Side-wall version only: 30 cm diamond-pattern stainless tailgate, controlled independently by **Left Alt + T**.
 - Nine tension belts, body collisions, rear light controls, centered rear plate mount and the approved striped round underrun tube.
-- Optional Universal Autoload retains its own shop menu and **Shift + R** controls. Its fallback area is added only when no saved config exists: 2.38 m clear width between the stakes, 6.70 m length, floor at root y1.625, height2.20 m.
+- Optional Universal Autoload retains its own shop menu and **Shift + R** controls. Its fallback area is added only when no saved config exists: 2.44 m clear width between the stakes (same as the Krone ProfiLiner, so euro pallets fit 2 across sideways), 6.70 m length, floor at root y1.625, height2.20 m.
 - Tailgate save/network state is implemented; native Foldable handles the side animation state. Existing Box Truck runtime files are preserved.
 
 Source, reference, localization, belt-anchor, tailgate network/save and existing

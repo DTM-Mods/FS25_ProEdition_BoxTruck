@@ -27,3 +27,5 @@
 
 - When the user says to zip it up, that also authorizes closing GIANTS Editor: editor work is finished for now. This explicit instruction supersedes the earlier minimize-only rule for GIANTS Editor after packaging. Preserve unsaved production work; preview-only changes may be discarded when closing. User instruction, 2026-10-26.
 
+
+- ZIPPING (user rule, 2026-11-09, every AI, every mod): build EVERY zip with `python -I "MOD PROJECTS\Library\_FS25Knowledge\tools\build_zip.py" <modFolder> <out.zip>`. NEVER use PowerShell Compress-Archive (it writes backslash paths). Then list the zip and confirm no `\` in any entry.

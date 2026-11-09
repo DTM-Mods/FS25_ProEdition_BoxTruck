@@ -34,7 +34,7 @@ for name in ['modDesc.xml','boxTruck.xml','boxTruck.i3d','gatheredCurtains.i3d',
   for attr in ['filename','externalShapesFile','xmlFilename']:
    if e.get(attr):reference(e.get(attr),name)
   if e.tag in ['iconFilename','image','filename','sourceFile'] and e.text and e.text.strip():reference(e.text,name)
-desc=ET.parse(ROOT/'modDesc.xml').getroot();assert desc.findtext('version')=='1.5.1.0'
+desc=ET.parse(ROOT/'modDesc.xml').getroot();assert desc.findtext('version')=='1.5.2.0'
 assert {s.get('xmlFilename') for s in desc.findall('storeItems/storeItem')}=={'boxTruck.xml','flatbedTruck.xml'}
 types={t.get('name'):t for t in desc.findall('vehicleTypes/type')}
 assert [x.get('name') for x in types['boxTruckPro']]==['tensionBelts','boxTruckBody']
@@ -73,14 +73,14 @@ belts=v.findall('tensionBelts/tensionBeltsConfigurations/tensionBeltsConfigurati
 for belt in belts:
  start=maps[belt.get('startNode')];end=maps[belt.get('endNode')]
  assert [float(x) for x in start.get('rotation').split()]==[0,-90,0]
- assert float(start.get('translation').split()[0])==1.23
- assert [float(x) for x in end.get('translation').split()]==[0,0,2.46]
+ assert float(start.get('translation').split()[0])==1.26
+ assert [float(x) for x in end.get('translation').split()]==[0,0,2.52]
 assert v.find('design2Configurations/design2Configuration').get('isDefault')=='true'
 assert maps['flatbedTailgate'].get('translation')=='0 1.625 -5.37'
 assert all(x.get('node') not in maps or maps[x.get('node')] is not None for x in v.findall('lights/defaultLights/defaultLight'))
 before=json.loads((BUILD/'boxtruck_before_hashes.json').read_text())
 for name,digest in before.items():assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==digest,('Box Truck changed',name)
-result={'version':'1.5.1.0','runtime_files':len(members),'flatbed_mappings':len(maps),'belts':9,'side_configurations':2,
+result={'version':'1.5.2.0','runtime_files':len(members),'flatbed_mappings':len(maps),'belts':9,'side_configurations':2,
  'boxtruck_files_unchanged':list(before),'local_references_checked':len(refs),
  'runtime_members':sorted(members),'gameplay':'UNTESTED','zip_created':False}
 (BUILD/'source_validation.json').write_text(json.dumps(result,indent=2))

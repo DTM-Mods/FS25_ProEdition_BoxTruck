@@ -51,7 +51,7 @@ local ual={ALL='ALL',VEHICLE_CONFIGURATIONS={},OPTIONS_DEFAULTS={{id='isCurtainT
 local v={configFileName='C:/mods/FS25_BoxTruck_ProEdition/flatbedTruck.xml',specializations={ual},specializationNames={'FS25_UniversalAutoload.universalAutoload'}}
 FlatbedBody.onPreLoad(v)
 local group=ual.VEHICLE_CONFIGURATIONS['FS25_BoxTruck_ProEdition/flatbedTruck.xml'];assert(group and group.ALL)
-assert(group.ALL.loadArea[1].offset[2]==1.625 and group.ALL.loadArea[1].width==2.38)
+assert(group.ALL.loadArea[1].offset[2]==1.625 and group.ALL.loadArea[1].width==2.44)
 assert(group.ALL.isCurtainTrailer==false and group.ALL.autoCollectionMode==false)
 FlatbedBody.onPreLoad(v);assert(ual.VEHICLE_CONFIGURATIONS['FS25_BoxTruck_ProEdition/flatbedTruck.xml']==group)
 local custom={myChoice={autoloadDisabled=true,loadArea={{width=1}}}}

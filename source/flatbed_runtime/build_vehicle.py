@@ -44,9 +44,9 @@ for material in ir.find('Materials'):
 for node in ir.find('Scene').iter():
  name=node.get('name','')
  if name.startswith('flatbedBeltStart'):
-  index=int(name[-2:])-1;node.set('translation',f'1.23 1.64 {1.20-index*.775:.6f}');node.set('rotation','0 -90 0')
+  index=int(name[-2:])-1;node.set('translation',f'1.26 1.64 {1.20-index*.775:.6f}');node.set('rotation','0 -90 0')
  elif name.startswith('flatbedBeltEnd'):
-  node.set('translation','0 0 2.46');node.attrib.pop('rotation',None)
+  node.set('translation','0 0 2.52');node.attrib.pop('rotation',None)
 tree.write(ROOT/'flatbedTruck.i3d',encoding='iso-8859-1',xml_declaration=True)
 shutil.copyfile(BUILD/'flatbedTruck_work.i3d.shapes',ROOT/'flatbedTruck.i3d.shapes')
 old_paths,_,_=chains(ROOT/'boxTruck.i3d');new_paths,new_chains,names=chains(ROOT/'flatbedTruck.i3d')

@@ -1,4 +1,5 @@
-"""Export the approved flatbed body, runtime pivots, collisions and belt nodes."""
+"""Run on build/flatbed_body_wide_source.blend (widen_body.py output, ProfiLiner width 2.44 m clear).
+Export the approved flatbed body, runtime pivots, collisions and belt nodes."""
 import bpy,math,sys,runpy,json
 from pathlib import Path
 from mathutils import Vector
@@ -29,25 +30,25 @@ for ob in [fixed,boards,stakes]:reparent(ob,body)
 collisions=[]
 def col(name,parent,bounds,kind='always'):
  ob=cube(name,parent,bounds);collisions.append((name,kind));return ob
-col('flatbedColFloor',body,(-1.275,1.275,1.50,1.625,-5.35,1.50))
-col('flatbedColHeadboard',body,(-1.275,1.275,1.625,3.738,1.48,1.56))
+col('flatbedColFloor',body,(-1.305,1.305,1.50,1.625,-5.35,1.50))
+col('flatbedColHeadboard',body,(-1.305,1.305,1.625,3.738,1.48,1.56))
 for side,s in [('Left',-1),('Right',1)]:
  for j in range(3):
   pivot=bpy.data.objects[f'Board hinge {s} {j}'];pivot.name=f'flatbedBoard{side}{j+1}'
   a=-5.35+j*6.85/3+.065;b=-5.35+(j+1)*6.85/3-.065
-  col(f'flatbedColBoard{side}{j+1}',pivot,(s*1.25-.025,s*1.25+.025,1.65,2.22,a,b),'boards')
+  col(f'flatbedColBoard{side}{j+1}',pivot,(s*1.28-.025,s*1.28+.025,1.65,2.22,a,b),'boards')
  for j in range(4):
   z=-5.35+j*6.85/3
-  col(f'flatbedColPost{side}{j+1}',boards,(s*1.235-.045,s*1.235+.045,1.625,2.22,z-.045,z+.045),'boards')
+  col(f'flatbedColPost{side}{j+1}',boards,(s*1.265-.045,s*1.265+.045,1.625,2.22,z-.045,z+.045),'boards')
  for j,z in enumerate([-5.10,-3.83,-2.56,-1.29,-.02,1.25],1):
   pivot=bpy.data.objects[f'Stake {s} {j}'];pivot.name=f'flatbedStake{side}{j}'
-  col(f'flatbedColStake{side}{j}',pivot,(s*1.23-.035,s*1.23+.035,1.625,2.82,z-.045,z+.045),'stakes')
-col('flatbedColTailgate',gate,(-1.185,1.185,1.625,1.925,-5.383,-5.358),'boards')
+  col(f'flatbedColStake{side}{j}',pivot,(s*1.26-.035,s*1.26+.035,1.625,2.82,z-.045,z+.045),'stakes')
+col('flatbedColTailgate',gate,(-1.215,1.215,1.625,1.925,-5.383,-5.358),'boards')
 belts=empty('flatbedBelts',body)
 for j in range(9):
  z=1.20-j*.775
- start=empty(f'flatbedBeltStart{j+1:02d}',belts,(1.23,1.64,z),-90)
- empty(f'flatbedBeltEnd{j+1:02d}',start,(-1.23,1.64,z),-90)
+ start=empty(f'flatbedBeltStart{j+1:02d}',belts,(1.26,1.64,z),-90)
+ empty(f'flatbedBeltEnd{j+1:02d}',start,(-1.26,1.64,z),-90)
 trigger=cube('flatbedBeltTrigger',body,(-1.45,1.45,1.625,4.15,-5.5,1.65))
 # Add a separate reverse-light lens while retaining the approved light-bar layout.
 lampwhite=bpy.data.materials.new('Flatbed reverse lens');lampwhite.diffuse_color=(.8,.8,.8,1)

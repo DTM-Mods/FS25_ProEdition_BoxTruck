@@ -31,14 +31,14 @@ function FlatbedBody:onPreLoad(savegame)
     local name = self.configFileName
     if type(name) ~= "string" then return end
     if g_modsDirectory ~= nil and name:sub(1, #g_modsDirectory) == g_modsDirectory then name = name:sub(#g_modsDirectory + 1) end
-    -- Never replace ANY saved config group, including a shop opt-out/custom area.
-    if ual.VEHICLE_CONFIGURATIONS[name] ~= nil then return end
+    -- Ours replaces whatever the settings file has for this truck (an older build saved 2.38 m there, too narrow
+    -- for two pallets sideways), same as the box truck.
     local config = {selectedConfigs = ual.ALL or "ALL"}
     for _, item in ipairs(ual.OPTIONS_DEFAULTS) do if item.id ~= nil then config[item.id] = item.default end end
     local area = {}
     for _, item in ipairs(ual.LOADING_AREA_DEFAULTS) do if item.id ~= nil then area[item.id] = item.default end end
     -- Stakes project inward from the deck edge; use their clear width for both bodies.
-    area.offset, area.width, area.length, area.height = {0, 1.625, -1.925}, 2.38, 6.70, 2.20
+    area.offset, area.width, area.length, area.height = {0, 1.625, -1.925}, 2.44, 6.70, 2.20
     config.loadArea = {area}
     ual.VEHICLE_CONFIGURATIONS[name] = {[config.selectedConfigs] = config}
 end

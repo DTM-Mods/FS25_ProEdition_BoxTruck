@@ -13,12 +13,13 @@ FlatbedBody, and never runs BoxTruckBody.
 - Nine belt pairs and activation trigger; 29 collision shapes with configuration-specific side collisions.
 - Native running/brake/indicator/reverse-light controls, with 13 per-vertex lens colors. Existing rear real-light helpers retained; original rear donor lens meshes hidden.
 - Full-width striped tube uses the native vehicleShader reflector variation. Metal panels use brushed silver details.
-- UAL is optional. FlatbedBody:onPreLoad supplies defaults only if the vehicle has no existing configuration group, preserving shop/user choices. Area width2.38,length6.70,height2.20,offset0/1.625/-1.925. Width fits between stakes. No curtain behavior or global pallet-spacing override.
+- UAL is optional. FlatbedBody:onPreLoad supplies defaults only if the vehicle has no existing configuration group, preserving shop/user choices. Area width2.44 (ProfiLiner load width),length6.70,height2.20,offset0/1.625/-1.925. Width fits between stakes. No curtain behavior or global pallet-spacing override.
 - Tailgate server receives target requests, uses its own current phase, broadcasts phase/target; joining clients preserve direction. Saves retain the target endpoint. Native Foldable handles the side state.
 
 ## Build pipeline
 
-1. build_body.py in background Blender, starting from the saved approved tailgate/stripe proposal. Exports build/flatbedBody.i3d and shapes, pivots, belts, collisions, native materials and lamp vertex colors.
+0. widen_body.py in background Blender on previews/flatbed_tailgate_v3/flatbed_tailgate_proposal_v3.blend rebuilds the width to the ProfiLiner load width (2.44 m clear) -> build/flatbed_body_wide_source.blend.
+1. build_body.py in background Blender, run on build/flatbed_body_wide_source.blend. Exports build/flatbedBody.i3d and shapes, pivots, belts, collisions, native materials and lamp vertex colors.
 2. prepare_merge.py makes a PRIVATE scratch copy of the original Box Truck I3D/shapes. Never save a scene referencing production shapes.
 3. GIANTS Editor opens that scratch file. merge_body.lua removes only the old box body and imports the new one, preserving the native cab/chassis and rear real lights, and relocating the rear plate mount. merge_body.ps1 drives the save. Reuse ONE Editor instance; preserve work and close it when done.
 4. python -I source/flatbed_runtime/build_vehicle.py writes root flatbedTruck.i3d, .shapes and .xml. Rebuilds mappings against the actual saved hierarchy, normalizes belt transforms, applies brushed metal materials and writes configs/animations/lighting.

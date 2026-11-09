@@ -1312,12 +1312,12 @@
       <part node="needleSpeed" startTime="20" endTime="90" startRot="0 0 -18.5" endRot="0 0 -141.6" />
     </animation>
     <animation name="additionalForks">
-      <part node="flatbedStakeLeft1" startTime="0" endTime="0.7" startTrans="-1.23 1.62 -5.1" endTrans="-1.23 1.62 -3.97" />
-      <part node="flatbedStakeLeft3" startTime="0" endTime="0.7" startTrans="-1.23 1.62 -2.56" endTrans="-1.23 1.62 -1.43" />
-      <part node="flatbedStakeLeft5" startTime="0" endTime="0.7" startTrans="-1.23 1.62 -0.02" endTrans="-1.23 1.62 1.11" />
-      <part node="flatbedStakeRight1" startTime="0" endTime="0.7" startTrans="1.23 1.62 -5.1" endTrans="1.23 1.62 -3.97" />
-      <part node="flatbedStakeRight3" startTime="0" endTime="0.7" startTrans="1.23 1.62 -2.56" endTrans="1.23 1.62 -1.43" />
-      <part node="flatbedStakeRight5" startTime="0" endTime="0.7" startTrans="1.23 1.62 -0.02" endTrans="1.23 1.62 1.11" />
+      <part node="flatbedStakeLeft1" startTime="0" endTime="0.7" startTrans="-1.26 1.62 -5.1" endTrans="-1.26 1.62 -3.97" />
+      <part node="flatbedStakeLeft3" startTime="0" endTime="0.7" startTrans="-1.26 1.62 -2.56" endTrans="-1.26 1.62 -1.43" />
+      <part node="flatbedStakeLeft5" startTime="0" endTime="0.7" startTrans="-1.26 1.62 -0.02" endTrans="-1.26 1.62 1.11" />
+      <part node="flatbedStakeRight1" startTime="0" endTime="0.7" startTrans="1.26 1.62 -5.1" endTrans="1.26 1.62 -3.97" />
+      <part node="flatbedStakeRight3" startTime="0" endTime="0.7" startTrans="1.26 1.62 -2.56" endTrans="1.26 1.62 -1.43" />
+      <part node="flatbedStakeRight5" startTime="0" endTime="0.7" startTrans="1.26 1.62 -0.02" endTrans="1.26 1.62 1.11" />
       <sound template="hingeMedium" startTime="0.01" direction="1" volumeScale="4" pitchScale="0.6" linkNode="flatbedStakeLeft3" />
       <sound template="clackVar6" startTime="0.6" direction="1" volumeScale="5" pitchScale="0.5" linkNode="flatbedStakeLeft3" />
       <sound template="hingeMedium" startTime="0.69" direction="-1" volumeScale="4" pitchScale="0.6" linkNode="flatbedStakeLeft3" />
