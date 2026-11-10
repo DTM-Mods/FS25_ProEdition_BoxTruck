@@ -1,4 +1,4 @@
-# Box Truck Pro Edition (FS25) - work in progress
+# Box Truck Pro Edition (FS25)
 
 Farming Simulator 25 box truck for hauling pallets, by PropaineX.
 
