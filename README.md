@@ -27,13 +27,36 @@
   <img src="https://raw.githubusercontent.com/DTM-Mods/.github/main/assets/features.jpg" alt="Features" width="100%">
 </p>
 
-Farming Simulator 25 box truck for hauling pallets, by PropaineX.
+Two trucks in the shop under **PropaineX Pro Edition > Pro Edition Trucks**, both on the game's own Volvo FH16 8x4 Tag cab and chassis, with four engines (FH425 City Hauler, FH515 Regional Hauler, FH585 Long Hauler, FH600 Heavy Hauler, 425 to 600 hp).
+
+**Box Truck**: a curtain-sider for hauling pallets, in the style of the Krone ProfiLiner.
+
+- The curtain gathers at the rear, the side boards fold away and the posts slide back
+- Rear barn doors and 9 tension belts across the load floor
+- Load space about 6.8 x 2.48 m, 2.55 m inside height
+- Curtain designs: plain white, ProEdition, Krone, Farming Simulator League, GIANTS; plain white paint option that matches the body
+- Controls: **X** rear doors, **Z** open/close the selected curtain, **U** select the left or right curtain
+
+**Flatbed Truck**: a 6.85 x 2.55 m deck with side walls or sliding stakes (shop choice).
+
+- **X** folds the side boards down, or pairs the stakes on both sides
+- Side-wall version: a stainless tailgate on **Left Alt + T**
+- Nine tension belts; works with Universal Autoload (2.44 m between the stakes, so euro pallets fit 2 across sideways)
+
+Price $175,000, top speed 90 km/h. Works in multiplayer. All controls can be changed in the controls menu.
+
+See [PATCH_NOTES.md](PATCH_NOTES.md) for the changes in each version.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/DTM-Mods/.github/main/assets/patch-notes.jpg" alt="Patch notes" width="100%">
+  <img src="https://raw.githubusercontent.com/DTM-Mods/.github/main/assets/installation.jpg" alt="Installation" width="100%">
 </p>
 
-## Working source: 1.4.0.0 — Flatbed Truck Pro Edition
+Download `FS25_BoxTruck_ProEdition.zip` from the [latest release](https://github.com/DTM-Mods/FS25_ProEdition_BoxTruck/releases/latest) and put it in `Documents/My Games/FarmingSimulator2025/mods`, without unzipping or renaming it. In multiplayer, the server and every player need the same version.
+
+<details>
+<summary><b>For developers</b>: files, building and tests</summary>
+
+### Working source: 1.4.0.0 — Flatbed Truck Pro Edition
 
 The flatbed is integrated as a separate shop vehicle beside the Box Truck, under
 **PropaineX Pro Edition > Pro Edition Trucks**. This source build is **untested
@@ -56,7 +79,7 @@ Runtime files: `flatbedTruck.xml`, `flatbedTruck.i3d` and `scripts/FlatbedBody.l
 Build/check instructions: `source/flatbed_runtime/README.md`; player notes:
 `PATCH_NOTES.md`.
 
-## Earlier documented release: 1.3.0.4
+### Earlier documented release: 1.3.0.4
 
 October 27, 2026: the curtain, banner, bottom reinforcement band, straps and buckles now move together continuously between shut and the selected gathered shape. All three shapes on both sides use the same reversible transition, with artwork visible throughout. Random selection, networking, saves and loading controls are preserved.
 
@@ -66,7 +89,7 @@ Local testing ZIP: `FarmingSimulator2025/Testing_local/FS25_BoxTruck_ProEdition.
 
 Finished animated preview: `previews/curtain_straps_motion_v2/curtain_straps_open_close_loop.gif`. Implementation notes: `chat_history/2026-10-27_curtain_shape_motion.md` and `chat_history/2026-10-27_moving_curtain_straps.md`.
 
-## Previous version: 1.3.0.1
+### Previous version: 1.3.0.1
 
 Curtain attachment fix: use the mapping record's `nodeId` when linking runtime gathered curtains. Corrected regression checks pass; actual in-game verification remains pending. The new Testing_local ZIP is 50,453,200 bytes, SHA-256 `50693c7c85c8a57772260fdbdc76975cd180bee3334c2263cbdbf24a18cea6c0`. See `chat_history/2026-10-26_1.3.0.1_testing_release.md`; the 1.3.0.0 delivery details below describe the previous build.
 
@@ -94,9 +117,7 @@ See [implementation notes](chat_history/2026-10-26_random_gathered_curtains.md),
 - Body: our own curtain-sider (curtain sides, rear barn doors), built in Blender.
 - Loading: forklift with tension belts, plus an autoload script written from scratch.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/DTM-Mods/.github/main/assets/files.jpg" alt="Files" width="100%">
-</p>
+### Files
 
 - `source/` - Blender build scripts, texture tools, runtime checks, and ZIP packaging.
 - `previews/` - preview renders and the generated .blend.
@@ -104,6 +125,8 @@ See [implementation notes](chat_history/2026-10-26_random_gathered_curtains.md),
 - `chat_history/` - session notes.
 
 Repository: `PropaineX/FS25_ProEdition_BoxTruck`. The truck uses the GIANTS FH16 base-game chassis and cab.
+
+</details>
 
 ---
 
