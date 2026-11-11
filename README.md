@@ -29,6 +29,10 @@
 
 Farming Simulator 25 box truck for hauling pallets, by PropaineX.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DTM-Mods/.github/main/assets/patch-notes.jpg" alt="Patch notes" width="100%">
+</p>
+
 ## Working source: 1.4.0.0 — Flatbed Truck Pro Edition
 
 The flatbed is integrated as a separate shop vehicle beside the Box Truck, under
@@ -90,7 +94,9 @@ See [implementation notes](chat_history/2026-10-26_random_gathered_curtains.md),
 - Body: our own curtain-sider (curtain sides, rear barn doors), built in Blender.
 - Loading: forklift with tension belts, plus an autoload script written from scratch.
 
-## Folders
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DTM-Mods/.github/main/assets/files.jpg" alt="Files" width="100%">
+</p>
 - `source/` - Blender build scripts, texture tools, runtime checks, and ZIP packaging.
 - `previews/` - preview renders and the generated .blend.
 - `reference_*.md` - measurements taken from other trucks (reference only, nothing copied).
