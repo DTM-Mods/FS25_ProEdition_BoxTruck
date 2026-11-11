@@ -30,3 +30,12 @@ source/__pycache__/
 /previews/curtain_straps_motion_v2/*
 !/previews/curtain_straps_motion_v2/*.gif
 !/previews/curtain_straps_motion_v2/check.lua
+
+# Work files kept local, not in git (PropaineX rule 2026-11-11)
+*.blend
+*.blend[0-9]
+*.obj
+*.mtl
+*.bak
+*backup*/
+*Backup*/
