@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/DTM-Mods/.github/main/assets/patch-notes.jpg" alt="Patch notes" width="100%">
+</p>
+
 # Patch notes
 
 ## 1.4.0.0 ? 2026-11-06 ? Flatbed Truck Pro Edition
