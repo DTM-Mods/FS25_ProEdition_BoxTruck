@@ -97,6 +97,7 @@ See [implementation notes](chat_history/2026-10-26_random_gathered_curtains.md),
 <p align="center">
   <img src="https://raw.githubusercontent.com/DTM-Mods/.github/main/assets/files.jpg" alt="Files" width="100%">
 </p>
+
 - `source/` - Blender build scripts, texture tools, runtime checks, and ZIP packaging.
 - `previews/` - preview renders and the generated .blend.
 - `reference_*.md` - measurements taken from other trucks (reference only, nothing copied).
