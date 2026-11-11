@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <b>A Volvo FH16 8x4 curtain-sider for hauling pallets.</b><br>
+  <b>A Volvo FH16 8x4 curtain-sider and flatbed for hauling pallets.</b><br>
   <sub>by PropaineX</sub>
 </p>
 
