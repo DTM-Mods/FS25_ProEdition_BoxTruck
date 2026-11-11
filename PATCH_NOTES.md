@@ -4,7 +4,25 @@
 
 # Patch notes
 
-## 1.4.0.0 ? 2026-11-06 ? Flatbed Truck Pro Edition
+## 1.5.3.0
+- Flatbed: milk pallets and other euro pallets load across the deck again (two side by side) instead of long side front to back. The truck now always gives Universal Autoload its correct loading area, even when an older saved setting exists.
+
+## 1.5.2.0
+- Flatbed deck widened to 2.44 m, the same load width as the Krone ProfiLiner, so two euro pallets fit side by side. Belts, stakes and collisions moved to match.
+
+## 1.5.1.0
+- The "Pro Edition Trucks" shop tile now sits next to the other Pro Edition vehicle tiles.
+- Flatbed: new weathered wooden deck.
+- Flatbed: 10 off-road tyre options in the shop (445/65 and 500/60 singles on the drive axles), plus the stock tyres.
+
+## 1.5.0.0
+- Both trucks now show up in their own "Pro Edition Trucks" section in the shop.
+- Flatbed: off-road single tyre options added.
+
+## 1.4.0.1
+- Flatbed: the tailgate no longer has its own key. It opens and closes together with the side walls on X.
+
+## 1.4.0.0 - 2026-11-06 - Flatbed Truck Pro Edition
 
 Status: **Source build complete. Untested in game. Not packaged or uploaded.**
 
