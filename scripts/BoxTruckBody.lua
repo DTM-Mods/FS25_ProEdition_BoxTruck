@@ -434,6 +434,10 @@ function BoxTruckBody:onPreLoad(savegame)
     config.loadArea = {area}
     -- ours replaces whatever the settings file has for this truck (all configurations)
     UniversalAutoload.VEHICLE_CONFIGURATIONS[name] = {[config.selectedConfigs] = config}
+    -- pallet pickup zones the size of the ProfiLiner's (shared hook in FlatbedBody.lua, same mod)
+    if FlatbedBody ~= nil and FlatbedBody.hookPickupZones ~= nil then
+        FlatbedBody.hookPickupZones(UniversalAutoload)
+    end
     Logging.info("Box Truck: Universal Autoload set up like the Krone ProfiLiner for '%s'", name)
 end
 

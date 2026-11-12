@@ -1,4 +1,4 @@
-00:02.313  blend            | Read blend: "C:\Users\groov\OneDrive\Documents\My Games\FarmingSimulator2025\MOD PROJECTS\FS25_BoxTruck_ProEdition\source\flatbed_runtime\build\flatbed_body_wide_source.blend"
+00:01.969  blend            | Read blend: "C:\Users\groov\OneDrive\Documents\My Games\FarmingSimulator2025\MOD PROJECTS\FS25_BoxTruck_ProEdition\source\flatbed_runtime\build\flatbed_body_wide_source.blend"
 C:\Users\groov\OneDrive\Documents\My Games\FarmingSimulator2025\MOD PROJECTS\FS25_BoxTruck_ProEdition\source\export_body.py:16: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
   m.use_nodes = True
 C:\Users\groov\AppData\Roaming\Blender Foundation\Blender\5.2\scripts\addons\io_export_i3d\__init__.py
@@ -46,10 +46,8 @@ C:\Users\groov\AppData\Roaming\Blender Foundation\Blender\5.2\scripts\addons\io_
 LOG {'INFO'} Start export...
 LOG {'INFO'} Exported to C:\Users\groov\OneDrive\Documents\My Games\FarmingSimulator2025\MOD PROJECTS\FS25_BoxTruck_ProEdition\source\flatbed_runtime\build\flatbedBody.i3d
 LOG {'INFO'} BUILD BINARY
-LOG {'INFO'} Scenefile 'C:/Users/groov/OneDrive/Documents/My Games/FarmingSimulator2025/MOD PROJECTS/FS25_BoxTruck_ProEdition/source/flatbed_runtime/build/flatbedBody.i3d' saved in 54.920600 ms at 16:21:17 2026-11-07.
-LOG {'INFO'} exportObjectDataTexture:
-LOG {'WARNING'} No config xml file set!
-LOG {'INFO'} SUCCESS Export time is 10.11 seconds
+LOG {'ERROR'} [WinError 4551] An Application Control policy has blocked this file
+LOG {'WARNING'} Export failed
 RUNTIME_BODY_READY 29 collision shapes; 13 functional light lenses;9belts
 unregisterTools
 Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)

@@ -34,7 +34,7 @@ for name in ['modDesc.xml','boxTruck.xml','boxTruck.i3d','gatheredCurtains.i3d',
   for attr in ['filename','externalShapesFile','xmlFilename']:
    if e.get(attr):reference(e.get(attr),name)
   if e.tag in ['iconFilename','image','filename','sourceFile'] and e.text and e.text.strip():reference(e.text,name)
-desc=ET.parse(ROOT/'modDesc.xml').getroot();assert desc.findtext('version')=='1.5.2.0'
+desc=ET.parse(ROOT/'modDesc.xml').getroot();assert desc.findtext('version')=='1.5.4.0'
 assert {s.get('xmlFilename') for s in desc.findall('storeItems/storeItem')}=={'boxTruck.xml','flatbedTruck.xml'}
 types={t.get('name'):t for t in desc.findall('vehicleTypes/type')}
 assert [x.get('name') for x in types['boxTruckPro']]==['tensionBelts','boxTruckBody']

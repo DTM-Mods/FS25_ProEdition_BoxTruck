@@ -35,6 +35,20 @@ for n in moves:
     if O[n].parent and O[n].parent.name in moves: continue
     move_out(O[n]); bpy.context.view_layer.update()
 
+# Deck edge rails shared their outer face (x = +-1.305) and end faces (Blender y = -1.50 / 5.35, the length axis) with the black structural deck
+# and z-fought in game (user, 2026-11-12: "I want the black bar to go all around"). Inset the rail's outer face and both
+# ends by 3 mm so the deck's dark steel faces always win. Real geometry: only the vertices of those faces move.
+INSET = 0.003
+for ob in [o for o in O if o.name.startswith('Deck edge aluminum rail')]:
+    mw = ob.matrix_world; inv = mw.inverted(); ws = [mw @ v.co for v in ob.data.vertices]
+    xo = max(abs(w.x) for w in ws); y0 = min(w.y for w in ws); y1 = max(w.y for w in ws)
+    for v, w in zip(ob.data.vertices, ws):
+        if abs(w.x) > xo - 0.02: w.x -= INSET if w.x > 0 else -INSET
+        if w.y > y1 - 0.02: w.y -= INSET
+        elif w.y < y0 + 0.02: w.y += INSET
+        v.co = inv @ w
+bpy.context.view_layer.update()
+
 # 15 deck planks, evenly re-spaced across the wider deck (6 mm gaps as before)
 half = 1.21 + D; pw = 2 * half / 15
 for i in range(15):
@@ -70,6 +84,10 @@ def span(n):
     xs = [(O[n].matrix_world @ v.co).x for v in O[n].data.vertices]; return min(xs), max(xs)
 def close(a, b): return abs(a - b) < 1e-4
 assert close(span('Structural deck')[1], 1.305) and close(span('Tailgate stainless panel')[1], 1.215)
+for n in ['Deck edge aluminum rail', 'Deck edge aluminum rail.001']:
+    assert close(max(abs(x) for x in span(n)), 1.305 - INSET), n            # inside the deck's outer face
+    ys = [(O[n].matrix_world @ v.co).y for v in O[n].data.vertices]
+    assert close(min(ys), -1.50 + INSET) and close(max(ys), 5.35 - INSET), n  # inside the deck's end faces
 assert close(span('Deck plank 00')[0], -1.24) and close(span('Deck plank 14')[1], 1.24 - .006)
 assert close(span('Stake steel upright')[1], -1.225)          # stake inner face: 2.45 m between stakes
 assert close(span('Board fixed post')[1], -1.22)          # post inner face: 2.44 m clear (UAL width)

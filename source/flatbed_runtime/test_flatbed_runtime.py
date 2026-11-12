@@ -47,21 +47,39 @@ lua.execute('''
 assert(FlatbedBody.onRegisterActionEvents==nil and FlatbedBody.setFlatbedTailgate==nil and FlatbedTailgateEvent==nil)
 -- UAL: optional; fallback only on absent config group, preserving every option.
 g_modsDirectory='C:/mods/'
-local ual={ALL='ALL',VEHICLE_CONFIGURATIONS={},OPTIONS_DEFAULTS={{id='isCurtainTrailer',default=false},{id='autoCollectionMode',default=false}},LOADING_AREA_DEFAULTS={{id='height',default=1}}}
+local ual={updateLoadingTriggers=function() end,ALL='ALL',VEHICLE_CONFIGURATIONS={},OPTIONS_DEFAULTS={{id='isCurtainTrailer',default=false},{id='autoCollectionMode',default=false}},LOADING_AREA_DEFAULTS={{id='height',default=1}}}
 local v={configFileName='C:/mods/FS25_BoxTruck_ProEdition/flatbedTruck.xml',specializations={ual},specializationNames={'FS25_UniversalAutoload.universalAutoload'}}
 FlatbedBody.onPreLoad(v)
 local group=ual.VEHICLE_CONFIGURATIONS['FS25_BoxTruck_ProEdition/flatbedTruck.xml'];assert(group and group.ALL)
 assert(group.ALL.loadArea[1].offset[2]==1.625 and group.ALL.loadArea[1].width==2.44)
 assert(group.ALL.isCurtainTrailer==false and group.ALL.autoCollectionMode==false)
-FlatbedBody.onPreLoad(v);assert(ual.VEHICLE_CONFIGURATIONS['FS25_BoxTruck_ProEdition/flatbedTruck.xml']==group)
-local custom={myChoice={autoloadDisabled=true,loadArea={{width=1}}}}
-ual.VEHICLE_CONFIGURATIONS['FS25_BoxTruck_ProEdition/flatbedTruck.xml']=custom
-FlatbedBody.onPreLoad(v);assert(ual.VEHICLE_CONFIGURATIONS['FS25_BoxTruck_ProEdition/flatbedTruck.xml']==custom)
-assert(custom.myChoice.loadArea[1].width==1 and custom.myChoice.autoloadDisabled)
+-- 1.5.3.0: every load rewrites our entry (an older saved 2.38 m area must not survive)
+ual.VEHICLE_CONFIGURATIONS['FS25_BoxTruck_ProEdition/flatbedTruck.xml']={myChoice={loadArea={{width=1}}}}
+FlatbedBody.onPreLoad(v);assert(ual.VEHICLE_CONFIGURATIONS['FS25_BoxTruck_ProEdition/flatbedTruck.xml'].ALL.loadArea[1].width==2.44)
+-- 1.5.4.0: side pickup zones sized like the ProfiLiner's, only on our truck, hooked once
+local scales={}
+function setScale(n,x,y,z) scales[n]={x,y,z} end
+function getScale(n) local s=scales[n] or {1,1,1} return s[1],s[2],s[3] end
+function setTranslation(n,x,y,z) scales[n..'t']={x,y,z} end
+local calls=0
+ual.TRIGGER_DELTA=0.1
+local hooked=ual.updateLoadingTriggers
+assert(hooked~=nil and ual.flatbedProPickupHooked)
+local function mk() return {spec_universalAutoload={loadVolume={width=2.44,length=6.7,height=2.2},triggers={leftPickupTrigger={node='L'},rightPickupTrigger={node='R'}}}} end
+local truck=mk(); truck['spec_'..FlatbedBody.SPEC_NAME]={}
+ual.updateLoadingTriggers(truck)
+local t=truck.spec_universalAutoload.triggers.leftPickupTrigger
+assert(math.abs(t.sizeZ-14.62)<1e-6 and math.abs(t.sizeY-7.5)<1e-6 and math.abs(t.sizeX-1.66*2.44)<1e-6)
+assert(scales['Rt'][1]<0 and math.abs(scales['Lt'][1]+scales['Rt'][1])<1e-9)
+local box=mk(); box['spec_'..g_currentModName..'.boxTruckBody']={}; box.spec_universalAutoload.loadVolume.width=2.4548
+ual.updateLoadingTriggers(box); local b=box.spec_universalAutoload.triggers.leftPickupTrigger
+assert(b.sizeZ==t.sizeZ and b.sizeY==t.sizeY and b.sizeX==t.sizeX)
+local other=mk(); ual.updateLoadingTriggers(other); assert(other.spec_universalAutoload.triggers.leftPickupTrigger.sizeZ==nil)
+FlatbedBody.onPreLoad(v); assert(ual.updateLoadingTriggers==hooked)
 FlatbedBody.onPreLoad({});assert(ual.OPTIONS_DEFAULTS[1].default==false)
 ''')
 print('PASS no separate tailgate key: script registers no actions or events')
-print('PASS UAL: optional dependency, exact default area, default option preservation, repeated load and custom/disabled config preservation')
+print('PASS UAL: optional dependency, exact default area, default option preservation, rewrite on every load, ProfiLiner-sized side pickup zones on both our trucks only')
 with zipfile.ZipFile(ROOT.parent.parent/'debugger/gameSource.zip') as z:
  lua.execute(z.read('dataS/scripts/vehicles/specializations/Foldable.lua').decode())
 for time,moving,direction in [(0,0,1),(1,0,-1),(.3,1,-1),(.7,-1,1)]:
