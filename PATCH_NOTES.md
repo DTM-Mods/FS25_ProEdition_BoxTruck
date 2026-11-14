@@ -4,6 +4,10 @@
 
 # Patch notes
 
+## 1.5.4.1
+
+- The author now shows as **DTM Mods, PropaineX** in the mod list.
+
 ## 1.5.4.0
 - Both trucks: with Universal Autoload, the zone they pick pallets up from beside the truck is now the same size as the Krone ProfiLiner's (14.6 m long, centred on the load area), so pulling up to a row of pallets reaches the same ones a ProfiLiner would. Each truck still holds only what fits on it.
 - Flatbed: the black frame bar under the side walls no longer flickers with the grey deck-edge rail; it now shows cleanly all the way round.
