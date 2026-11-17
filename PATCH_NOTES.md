@@ -4,6 +4,9 @@
 
 # Patch notes
 
+## 1.5.4.2
+- Meets the GIANTS ModHub checks (TestRunner): textures and modDesc brought up to date, an unused texture is no longer shipped.
+
 ## 1.5.4.1
 
 - The author now shows as **DTM Mods, PropaineX** in the mod list.
