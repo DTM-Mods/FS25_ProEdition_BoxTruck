@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="115">
+<modDesc descVersion="116">
     <author>DTM Mods, PropaineX</author>
-    <version>1.5.4.2</version>
+    <version>1.5.4.3</version>
     <title>
         <en>Box Truck Pro Edition</en>
         <de>Kofferaufbau-LKW Pro Edition</de>
@@ -27,8 +27,8 @@ Price: $175,000
 Power: 425 - 600 hp
 Max. speed: 90 km/h
 
-Changelog 1.5.4.2:
-- Meets the GIANTS ModHub checks (TestRunner): textures and modDesc brought up to date, an unused texture is no longer shipped.]]></en>
+Changelog 1.5.4.3:
+- Updated for the current game version (modDesc version 116).]]></en>
         <de><![CDATA[Volvo FH16 8x4 mit Planenaufbau für den Palettentransport.
 
 - Planenaufbau wie beim Krone ProfiLiner: die Plane rafft sich hinten zusammen, die Seitenbretter klappen weg
@@ -49,8 +49,8 @@ Preis: 175.000 €
 Leistung: 425 - 600 PS
 Höchstgeschwindigkeit: 90 km/h
 
-Changelog 1.5.4.2:
-- Erfüllt die GIANTS-ModHub-Prüfungen (TestRunner): Texturen und modDesc aktualisiert, eine ungenutzte Textur wird nicht mehr mitgeliefert.]]></de>
+Changelog 1.5.4.3:
+- An die aktuelle Spielversion angepasst (modDesc-Version 116).]]></de>
     </description>
     <iconFilename>icon_BoxTruck.dds</iconFilename>
     <multiplayer supported="true" />

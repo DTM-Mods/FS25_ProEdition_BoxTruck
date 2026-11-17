@@ -4,6 +4,10 @@
 
 # Patch notes
 
+## 1.5.4.3
+
+- Updated for the current game version: modDesc descVersion 116 (the game build of 2026-10-27; GIANTS TestRunner 0.9.24 accepts only 116).
+
 ## 1.5.4.2
 - Meets the GIANTS ModHub checks (TestRunner): textures and modDesc brought up to date, an unused texture is no longer shipped.
 
