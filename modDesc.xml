@@ -7,7 +7,19 @@
         <de>Kofferaufbau-LKW Pro Edition</de>
     </title>
     <description>
-        <en><![CDATA[Volvo FH16 8x4 with a curtain-sider body for hauling pallets.
+        <en><![CDATA[FH16 Box Truck
+Category: Pro Edition Trucks
+Price: $175,000
+Power: 425 - 600 hp
+Max. speed: 90 kph
+
+Flatbed Truck Pro Edition
+Category: Pro Edition Trucks
+Price: $155,000
+Power: 425 - 600 hp
+Max. speed: 90 kph
+
+Volvo FH16 8x4 with a curtain-sider body for hauling pallets.
 
 - Curtain-sider in the style of the Krone ProfiLiner: the curtain gathers at the rear, the side boards fold away
   and the posts slide back
@@ -18,18 +30,28 @@
 - Plain white paint option that matches the body
 - Curtain designs: plain white, ProEdition, Krone, Farming Simulator League, GIANTS
 
+Flatbed Truck: the same FH16 8x4 with a 6.85 x 2.55 m wooden deck, side walls or sliding stakes and 9 tension belts.
+
 Controls (can be changed in the controls menu):
-X = open/close rear doors
+X = open/close rear doors (Flatbed: lower/raise the side walls or gather/spread the stakes)
 Z = open/close the selected curtain
 U = select left or right curtain
 
-Price: $175,000
-Power: 425 - 600 hp
-Max. speed: 90 km/h
-
 Changelog 1.5.4.3:
 - Updated for the current game version (modDesc version 116).]]></en>
-        <de><![CDATA[Volvo FH16 8x4 mit Planenaufbau für den Palettentransport.
+        <de><![CDATA[FH16 Box Truck
+Shopkategorie: Pro Edition Trucks
+Preis: 175.000 €
+Leistung: 425 - 600 PS
+Höchstgeschwindigkeit: 90 km/h
+
+Flatbed Truck Pro Edition
+Shopkategorie: Pro Edition Trucks
+Preis: 155.000 €
+Leistung: 425 - 600 PS
+Höchstgeschwindigkeit: 90 km/h
+
+Volvo FH16 8x4 mit Planenaufbau für den Palettentransport.
 
 - Planenaufbau wie beim Krone ProfiLiner: die Plane rafft sich hinten zusammen, die Seitenbretter klappen weg
   und die Rungen fahren nach hinten
@@ -40,14 +62,12 @@ Changelog 1.5.4.3:
 - Weiße Lackierung ohne Metallic, passend zum Aufbau
 - Planendesigns: Weiß, ProEdition, Krone, Farming Simulator League, GIANTS
 
+Pritschen-LKW (Flatbed Truck): derselbe FH16 8x4 mit 6,85 x 2,55 m Holzboden, Bordwänden oder verschiebbaren Rungen und 9 Spanngurten.
+
 Steuerung (im Steuerungsmenü änderbar):
-X = Hecktüren öffnen/schließen
+X = Hecktüren öffnen/schließen (Pritsche: Bordwände abklappen/hochklappen bzw. Rungen zusammenschieben/auseinanderziehen)
 Z = gewählte Plane öffnen/schließen
 U = linke oder rechte Plane wählen
-
-Preis: 175.000 €
-Leistung: 425 - 600 PS
-Höchstgeschwindigkeit: 90 km/h
 
 Changelog 1.5.4.3:
 - An die aktuelle Spielversion angepasst (modDesc-Version 116).]]></de>
@@ -83,7 +103,7 @@ Changelog 1.5.4.3:
 
     <!-- own shop section (heading) with one tile for the Pro Edition trucks -->
     <storeCategories>
-        <storeType name="PROPAINEX" title="PropaineX Pro Edition" insertAfter="DRIVABLES"/>
+        <storeType name="PROPAINEX" title="Pro Edition" insertAfter="DRIVABLES"/>
         <storeCategory type="PROPAINEX" name="PROEDITIONTRUCKS" title="Pro Edition Trucks" image="store_boxTruck.dds"/>
     </storeCategories>
 
