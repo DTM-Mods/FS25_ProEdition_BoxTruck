@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="116">
     <author>DTM Mods, PropaineX</author>
-    <version>1.5.4.3</version>
+    <version>1.5.4.4</version>
     <title>
         <en>Box Truck Pro Edition</en>
         <de>Kofferaufbau-LKW Pro Edition</de>
@@ -37,8 +37,9 @@ X = open/close rear doors (Flatbed: lower/raise the side walls or gather/spread 
 Z = open/close the selected curtain
 U = select left or right curtain
 
-Changelog 1.5.4.3:
-- Updated for the current game version (modDesc version 116).]]></en>
+Changelog 1.5.4.4:
+- Description in GIANTS' ModHub layout (category, price, upkeep or hotkeys at the top).
+- Shop images without mipmaps, as ModHub wants.]]></en>
         <de><![CDATA[FH16 Box Truck
 Shopkategorie: Pro Edition Trucks
 Preis: 175.000 €
@@ -69,8 +70,9 @@ X = Hecktüren öffnen/schließen (Pritsche: Bordwände abklappen/hochklappen bz
 Z = gewählte Plane öffnen/schließen
 U = linke oder rechte Plane wählen
 
-Changelog 1.5.4.3:
-- An die aktuelle Spielversion angepasst (modDesc-Version 116).]]></de>
+Changelog 1.5.4.4:
+- Beschreibung im ModHub-Aufbau von GIANTS (Kategorie, Preis, Unterhalt bzw. Tasten oben).
+- Shopbilder ohne Mipmaps, wie ModHub es verlangt.]]></de>
     </description>
     <iconFilename>icon_BoxTruck.dds</iconFilename>
     <multiplayer supported="true" />
