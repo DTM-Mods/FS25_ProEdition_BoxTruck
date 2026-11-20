@@ -330,6 +330,6 @@ VS Code Claude panel > past conversations, or in a terminal in this folder: `cla
 - GE (bt\v18boards): boards 0.025 x 0.14 x 2.16 m; rotation "90 0 90" = length -> x, height -> z.
 - Not yet seen in game: the motion itself (GE showed stored / halfway states set by Lua, not the XML animation).
 - 2026-10-24 ZIPPED 1.1.0.0 (user: "zip it up"): 14 files (the 12 of 1.0.1.0 + boxTruckProEditionDoorLeft/Right_diffuse.dds),
-  staged in bt\stage_1100, Library build_zip.py -> Testing_local\FS25_BoxTruck_ProEdition.zip 28,089,910 B sha256
+  staged in bt\stage_1100, Library build_zip.py -> Local_testing\FS25_BoxTruck_ProEdition.zip 28,089,910 B sha256
   aef80319235f...; uploaded to server /testing (new there, host key checked, temp name -> rename, SHA-256 verified).
   mods still has 1.0.1.0. Committed + pushed to the private GitHub repo.

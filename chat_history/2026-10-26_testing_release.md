@@ -8,7 +8,7 @@
 - Version bumped from 1.1.0.0 to 1.2.0.0. Packaged using `source/package_testing.py`: 18 runtime files, excluding source, previews, editor settings, backups, and staging.
 - ZIP: `FS25_BoxTruck_ProEdition.zip`, 33,493,897 bytes.
 - SHA-256: `05056dab6a3aa0d2c9ce1063a1575a9b18df77018749e9e4d2c8e6e7f75b113f`.
-- Local copy: `FarmingSimulator2025/Testing_local/FS25_BoxTruck_ProEdition.zip`, SHA-256 verified against the build.
+- Local copy: `FarmingSimulator2025/Local_testing/FS25_BoxTruck_ProEdition.zip`, SHA-256 verified against the build.
 - Uploaded via the existing SFTP upload workflow to `/testing/FS25_BoxTruck_ProEdition.zip`: pinned server host key checked, temporary upload renamed into place, final remote file read back and SHA-256 verified.
 - Live server `/FTPness` and local `mods` were not changed. No commit or push requested or performed.
 - GIANTS Editor minimized after preview work; Blender used in background mode.

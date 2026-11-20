@@ -9,7 +9,7 @@ session of 2026-11-06. Companion file: `2026-11-06_goat_milk_shed_clearance.md` 
   "start building"). Ruling out one option is not a yes for another.
 - **Visual changes: show a mock-up / before-after first, wait for OK.** Never overwrite an earlier preview file;
   number new ones (v1, v2, ...). Open every picture in VS Code yourself (`code -r "<path>"`).
-- **Don't zip or upload until the user says "zip it".** Then: zip to `FarmingSimulator2025\Testing_local\` AND the
+- **Don't zip or upload until the user says "zip it".** Then: zip to `FarmingSimulator2025\Local_testing\` AND the
   server's `/testing` over SFTP per `MOD PROJECTS\Library\_FS25ServerBrief\CLAUDE.md`.
 - Use **American spelling** (curb, tire, color).
 - Version numbers are ours to pick; bump before zipping, tell the user. Author name: PropaineX.

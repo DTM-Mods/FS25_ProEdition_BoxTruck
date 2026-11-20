@@ -4,7 +4,7 @@ import hashlib, json, zipfile, xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parent.parent
 version=ET.parse(ROOT/'modDesc.xml').getroot().findtext('version')
-out=ROOT.parent.parent/'Testing_local'
+out=ROOT.parent.parent/'Local_testing'
 out.mkdir(parents=True,exist_ok=True)
 files=[ROOT/n for n in ('modDesc.xml','boxTruck.xml','boxTruck.i3d','boxTruck.i3d.shapes','gatheredCurtains.i3d','gatheredCurtains.i3d.shapes','flatbedTruck.xml','flatbedTruck.i3d','flatbedTruck.i3d.shapes')]
 files+=sorted(ROOT.glob('*.dds'))
